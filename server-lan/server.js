@@ -38,7 +38,7 @@ var app = http.createServer(function (request, response) {
             break;
          case '.svg':
             contentType = 'image/svg+xml';
-            break;      
+            break;
         case '.jpg':
             contentType = 'image/jpg';
             break;
@@ -64,7 +64,7 @@ var app = http.createServer(function (request, response) {
             else {
                 response.writeHead(500);
                 response.end('Sorry, check with the site admin for error: '+error.code+' ..\n');
-                response.end(); 
+                response.end();
             }
         }
         else {
@@ -91,7 +91,7 @@ var netplayServer=new netplayserver.NetplayServer({
 io.on('connection', function(socket) {
 
     netplayServer.log(2,"<connect>","-",socket.id);
-    
+
     socket.on(netplayserver.NETCODE_JOINROOM, function (data) {
         netplayServer.log(2,"joinRoom","-",netplayServer.joinRoom(data[0],data[1],data[2],socket.id,socket));
     });
