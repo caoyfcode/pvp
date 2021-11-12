@@ -136,7 +136,7 @@ const nets = os.networkInterfaces();
 for (const name of Object.keys(nets)) {
     for (const net of nets[name]) {
         if (net.family === 'IPv4' && !net.internal)
-            netplayServer.log(0,"<startup>","-","Server ready at http://"+net.address+":"+PORT);
+            netplayServer.log(0,"<startup>","-","Server ready at [" + name + "] http://"+net.address+":"+PORT);
     }
 }
 
